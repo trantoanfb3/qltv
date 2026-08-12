@@ -14,7 +14,7 @@ namespace qltv
     public partial class frm_DocGia : Form
     {
 
-        private DatabaseHelper db = new DatabaseHelper();
+        private Database.Datahelper db = new Database.Datahelper();
         private string selectedMaDG = "";
 
         public frm_DocGia()
