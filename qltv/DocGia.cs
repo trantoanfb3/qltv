@@ -21,7 +21,16 @@ namespace qltv
         {
             InitializeComponent();
         }
-
+        //khai báo chuỗi kết nối 
+        string strconn = "Data Source=TONTD;Initial Catalog=qltv;Integrated Security=True;TrustServerCertificate=True";
+        //khai báo đối tượng kết nối 
+        SqlConnection conn = null;
+        //Đối tượng vận chuyển dữ liệu 
+        SqlDataAdapter da = null;
+        //Đối tượng hiện thị dữ liệu lên form 
+        DataTable dt = null;
+        SqlCommand cmd = null;  // thực thi câu lệnh SQL                  
+        SqlDataReader dr = null; // đọc dữ liệu trả về từ SQL Server 
         private void frm_DocGia_Load(object sender, EventArgs e)
         {
             LoadCombobox();
