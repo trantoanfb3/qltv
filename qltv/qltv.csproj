@@ -65,10 +65,14 @@
     <Compile Include="Kho.Designer.cs">
       <DependentUpon>Kho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DocGia.resx">
       <DependentUpon>DocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kho.resx">
       <DependentUpon>Kho.cs</DependentUpon>

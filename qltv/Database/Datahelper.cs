@@ -1,61 +1,102 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace qltv.Database
+namespace QLThuVien.Database
 {
-    internal class Datahelper
+    public class DatabaseHelper
     {
-        // Chuỗi kết nối đến SQL Server (Hãy thay đổi Server Name và Database Name cho đúng)
-        private string strConn = @"Data Source=.;Initial Catalog=QuanLyThuVien;Integrated Security=True";
+        private readonly string connectionString =
+            @"Data Source=TONTD;Initial Catalog=qltvs;Integrated Security=True;TrustServerCertificate=True";
 
-        // 1. Hàm thực thi truy vấn lấy dữ liệu về (SELECT) -> Trả về DataTable
-        public DataTable ExecuteQuery(string sql, SqlParameter[] pars = null)
+        public SqlConnection GetConnection()
         {
-            using (SqlConnection conn = new SqlConnection(strConn))
+            return new SqlConnection(connectionString);
+        }
+
+        public DataTable ExecuteQuery(
+            string sql,
+            CommandType commandType = CommandType.Text,
+            params SqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = GetConnection())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    if (pars != null) cmd.Parameters.AddRange(pars);
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        return dt;
-                    }
-                }
+                cmd.CommandType = commandType;
+
+                if (parameters != null)
+                    cmd.Parameters.AddRange(parameters);
+
+                adapter.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public int ExecuteNonQuery(
+            string sql,
+            CommandType commandType = CommandType.Text,
+            params SqlParameter[] parameters)
+        {
+            using (SqlConnection conn = GetConnection())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.CommandType = commandType;
+
+                if (parameters != null)
+                    cmd.Parameters.AddRange(parameters);
+
+                conn.Open();
+
+                return cmd.ExecuteNonQuery();
             }
         }
 
-        // 2. Hàm thực thi lệnh thêm/sửa/xóa (INSERT, UPDATE, DELETE) -> Trả về số dòng bị tác động
-        public int ExecuteNonQuery(string sql, SqlParameter[] pars = null)
+        public object ExecuteScalar(
+            string sql,
+            CommandType commandType = CommandType.Text,
+            params SqlParameter[] parameters)
         {
-            using (SqlConnection conn = new SqlConnection(strConn))
+            using (SqlConnection conn = GetConnection())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
+                cmd.CommandType = commandType;
+
+                if (parameters != null)
+                    cmd.Parameters.AddRange(parameters);
+
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    if (pars != null) cmd.Parameters.AddRange(pars);
-                    return cmd.ExecuteNonQuery();
-                }
+
+                return cmd.ExecuteScalar();
             }
         }
 
-        // 3. Hàm lấy về 1 giá trị đơn lẻ (COUNT, MAX, SCOPE_IDENTITY,...)
-        public object ExecuteScalar(string sql, SqlParameter[] pars = null)
+        public SqlDataReader ExecuteReader(
+            string sql,
+            CommandType commandType = CommandType.Text,
+            params SqlParameter[] parameters)
         {
-            using (SqlConnection conn = new SqlConnection(strConn))
+            SqlConnection conn = GetConnection();
+
+            try
             {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = commandType;
+
+                if (parameters != null)
+                    cmd.Parameters.AddRange(parameters);
+
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    if (pars != null) cmd.Parameters.AddRange(pars);
-                    return cmd.ExecuteScalar();
-                }
+
+                return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+            catch
+            {
+                conn.Dispose();
+                throw;
             }
         }
     }
