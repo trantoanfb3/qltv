@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Datahelper.cs" />
-    <Compile Include="DocGia.cs">
+    <Compile Include="DocGia2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocGia.Designer.cs">
-      <DependentUpon>DocGia.cs</DependentUpon>
+    <Compile Include="DocGia2.Designer.cs">
+      <DependentUpon>DocGia2.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -68,8 +68,8 @@
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DocGia.resx">
-      <DependentUpon>DocGia.cs</DependentUpon>
+    <EmbeddedResource Include="DocGia2.resx">
+      <DependentUpon>DocGia2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
