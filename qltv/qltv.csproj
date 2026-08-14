@@ -59,13 +59,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kho.cs">
+    <Compile Include="Kho2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kho.Designer.cs">
-      <DependentUpon>Kho.cs</DependentUpon>
+    <Compile Include="Kho2.Designer.cs">
+      <DependentUpon>Kho2.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="NhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DocGia2.resx">
@@ -74,8 +80,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kho.resx">
-      <DependentUpon>Kho.cs</DependentUpon>
+    <EmbeddedResource Include="Kho2.resx">
+      <DependentUpon>Kho2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
