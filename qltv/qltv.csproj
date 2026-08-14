@@ -62,8 +62,8 @@
     <Compile Include="Kho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kho2.Designer.cs">
-      <DependentUpon>Kho2.cs</DependentUpon>
+    <Compile Include="Kho.Designer.cs">
+      <DependentUpon>Kho.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Program.cs" />
@@ -83,11 +83,8 @@
     <EmbeddedResource Include="formdangbnhap.resx">
       <DependentUpon>formdangbnhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kho2.resx">
-      <DependentUpon>Kho2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhaCungCap.resx">
-      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    <EmbeddedResource Include="Kho.resx">
+      <DependentUpon>Kho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhaxuatban.resx">
       <DependentUpon>nhaxuatban.cs</DependentUpon>

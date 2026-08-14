@@ -1,6 +1,6 @@
 ﻿namespace qltv
 {
-    partial class formdangbnhap
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD:qltv/formdangbnhap.Designer.cs
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formdangbnhap));
-=======
->>>>>>> parent of 70a8fe8 (kkk):qltv/Form1.Designer.cs
             this.txt_tk = new System.Windows.Forms.TextBox();
             this.txt_mk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_dn = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
-<<<<<<< HEAD:qltv/formdangbnhap.Designer.cs
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-=======
->>>>>>> parent of 70a8fe8 (kkk):qltv/Form1.Designer.cs
             this.SuspendLayout();
             // 
             // txt_tk
@@ -98,61 +86,7 @@
             this.btn_thoat.TabIndex = 2;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
-            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
-<<<<<<< HEAD:qltv/formdangbnhap.Designer.cs
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.txt_mk);
-            this.groupBox1.Controls.Add(this.btn_dn);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btn_thoat);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txt_tk);
-            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(0, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(589, 528);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(107, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(337, 37);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "QUẢN LÝ THƯ VIỆN";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBox1.Location = new System.Drawing.Point(173, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 158);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // formdangbnhap
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 519);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "formdangbnhap";
-=======
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,7 +99,6 @@
             this.Controls.Add(this.txt_mk);
             this.Controls.Add(this.txt_tk);
             this.Name = "Form1";
->>>>>>> parent of 70a8fe8 (kkk):qltv/Form1.Designer.cs
             this.Text = "t";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,12 +113,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_dn;
         private System.Windows.Forms.Button btn_thoat;
-<<<<<<< HEAD:qltv/formdangbnhap.Designer.cs
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-=======
->>>>>>> parent of 70a8fe8 (kkk):qltv/Form1.Designer.cs
     }
 }
 
