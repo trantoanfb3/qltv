@@ -13,9 +13,9 @@ using System.Security.Cryptography;
 using System.Text;
 namespace qltv
 {
-    public partial class Form1 : Form
+    public partial class formdangbnhap : Form
     {
-        public Form1()
+        public formdangbnhap()
         {
             InitializeComponent();
         }
@@ -33,8 +33,8 @@ namespace qltv
         {
             try
             {
-                string tenDangNhap = txtTenDangNhap.Text.Trim();
-                string matKhau = txtMatKhau.Text.Trim();
+                string tenDangNhap = txt_tk.Text.Trim();
+                string matKhau = txt_mk.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(tenDangNhap))
                 {
@@ -44,7 +44,7 @@ namespace qltv
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
 
-                    txtTenDangNhap.Focus();
+                    txt_tk.Focus();
                     return;
                 }
 
@@ -56,7 +56,7 @@ namespace qltv
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
 
-                    txtMatKhau.Focus();
+                    txt_mk.Focus();
                     return;
                 }
 
@@ -143,6 +143,11 @@ namespace qltv
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
         {
 
         }

@@ -6,97 +6,48 @@ namespace QLThuVien.Database
 {
     public class DatabaseHelper
     {
-        private readonly string connectionString =
-            @"Data Source=TONTD;Initial Catalog=qltvs;Integrated Security=True;TrustServerCertificate=True";
+        private string strConn = @"Data Source=.;Initial Catalog=QuanLyThuVien;Integrated Security=True";
 
-        public SqlConnection GetConnection()
+        public DataTable ExecuteQuery(string sql, SqlParameter[] pars = null)
         {
-            return new SqlConnection(connectionString);
-        }
-
-        public DataTable ExecuteQuery(
-            string sql,
-            CommandType commandType = CommandType.Text,
-            params SqlParameter[] parameters)
-        {
-            DataTable dt = new DataTable();
-
-            using (SqlConnection conn = GetConnection())
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+            using (SqlConnection conn = new SqlConnection(strConn))
             {
-                cmd.CommandType = commandType;
-
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-
-                adapter.Fill(dt);
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (pars != null) cmd.Parameters.AddRange(pars);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
             }
-
-            return dt;
         }
 
-        public int ExecuteNonQuery(
-            string sql,
-            CommandType commandType = CommandType.Text,
-            params SqlParameter[] parameters)
+        public int ExecuteNonQuery(string sql, SqlParameter[] pars = null)
         {
-            using (SqlConnection conn = GetConnection())
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlConnection conn = new SqlConnection(strConn))
             {
-                cmd.CommandType = commandType;
-
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-
                 conn.Open();
-
-                return cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (pars != null) cmd.Parameters.AddRange(pars);
+                    return cmd.ExecuteNonQuery();
+                }
             }
         }
 
-        public object ExecuteScalar(
-            string sql,
-            CommandType commandType = CommandType.Text,
-            params SqlParameter[] parameters)
+        public object ExecuteScalar(string sql, SqlParameter[] pars = null)
         {
-            using (SqlConnection conn = GetConnection())
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlConnection conn = new SqlConnection(strConn))
             {
-                cmd.CommandType = commandType;
-
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-
                 conn.Open();
-
-                return cmd.ExecuteScalar();
-            }
-        }
-
-        public SqlDataReader ExecuteReader(
-            string sql,
-            CommandType commandType = CommandType.Text,
-            params SqlParameter[] parameters)
-        {
-            SqlConnection conn = GetConnection();
-
-            try
-            {
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.CommandType = commandType;
-
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
-
-                conn.Open();
-
-                return cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            }
-            catch
-            {
-                conn.Dispose();
-                throw;
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (pars != null) cmd.Parameters.AddRange(pars);
+                    return cmd.ExecuteScalar();
+                }
             }
         }
     }

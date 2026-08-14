@@ -1,6 +1,6 @@
 ﻿namespace qltv
 {
-    partial class Form1
+    partial class formdangbnhap
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formdangbnhap));
             this.txt_tk = new System.Windows.Forms.TextBox();
             this.txt_mk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +37,6 @@
             this.btn_thoat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,6 +102,7 @@
             this.btn_thoat.TabIndex = 2;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // groupBox1
             // 
@@ -118,9 +118,9 @@
             this.groupBox1.Controls.Add(this.txt_tk);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(-2, 3);
+            this.groupBox1.Location = new System.Drawing.Point(0, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(577, 528);
+            this.groupBox1.Size = new System.Drawing.Size(589, 528);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -132,17 +132,9 @@
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
             this.label3.Location = new System.Drawing.Point(107, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(350, 38);
+            this.label3.Size = new System.Drawing.Size(337, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "QUẢN LÝ THƯ VIỆN";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(581, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(506, 527);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -156,14 +148,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // formdangbnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 536);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(584, 519);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "formdangbnhap";
             this.Text = "t";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -183,7 +174,6 @@
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

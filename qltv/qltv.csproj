@@ -47,17 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Datahelper.cs" />
-    <Compile Include="DocGia.cs">
+    <Compile Include="formdangbnhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocGia.Designer.cs">
-      <DependentUpon>DocGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="formdangbnhap.Designer.cs">
+      <DependentUpon>formdangbnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Kho.cs">
       <SubType>Form</SubType>
@@ -66,16 +60,34 @@
       <DependentUpon>Kho.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="nhaxuatban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhaxuatban.Designer.cs">
+      <DependentUpon>nhaxuatban.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DocGia.resx">
-      <DependentUpon>DocGia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="tacgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tacgia.Designer.cs">
+      <DependentUpon>tacgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="theloai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="theloai.Designer.cs">
+      <DependentUpon>theloai.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="formdangbnhap.resx">
+      <DependentUpon>formdangbnhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kho.resx">
       <DependentUpon>Kho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhaxuatban.resx">
+      <DependentUpon>nhaxuatban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +98,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="tacgia.resx">
+      <DependentUpon>tacgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="theloai.resx">
+      <DependentUpon>theloai.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
