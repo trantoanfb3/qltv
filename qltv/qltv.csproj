@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Datahelper.cs" />
+    <Compile Include="DocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocGia.Designer.cs">
+      <DependentUpon>DocGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="formdangbnhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="theloai.Designer.cs">
       <DependentUpon>theloai.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DocGia.resx">
+      <DependentUpon>DocGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formdangbnhap.resx">
       <DependentUpon>formdangbnhap.cs</DependentUpon>
     </EmbeddedResource>
